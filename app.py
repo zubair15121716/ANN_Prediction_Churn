@@ -29,7 +29,7 @@ This app predicts whether a customer is likely to churn based on different attri
 """)
 
 # Mapping User inputs components with Defaults sets of value
-geography = st.selectbox('Select Customer Geography:', onehot_encoder_geo.categories_[1], help="Select the country of the customer.")
+geography = st.selectbox('Select Customer Geography:', onehot_encoder_geo.categories_[0], help="Select the country of the customer.")
 gender = st.selectbox('Select Gender:', label_encoder_gender.classes_, help="Select the gender of the customer.")
 age = st.slider('Select Age:', 18, 100, 40, help="Select the age of the customer.")
 balance = st.number_input('Enter Balance:', min_value=0, value=50000, step=1000, help="Enter the balance of the customer.")
