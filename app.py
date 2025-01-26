@@ -23,7 +23,7 @@ with open('scaler.pkl', 'rb') as file:
 ## ------------------- Streamlit app ---------------------------------
 
 # App title 
-st.title("Customer Churn Prediction")
+st.title("Customer Churn Rate Prediction")
 st.info("""
 This app predicts whether a customer is likely to churn based on different attributes.
 """)
