@@ -28,8 +28,8 @@ st.info("""
 This app predicts whether a customer is likely to churn based on different attributes.
 """)
 
-# User inputs with Defaults sets
-geography = st.selectbox('Select Customer Geography:', onehot_encoder_geo.categories_[0], help="Select the country of the customer.")
+# Mapping User inputs components with Defaults sets of value
+geography = st.selectbox('Select Customer Geography:', onehot_encoder_geo.categories_[1], help="Select the country of the customer.")
 gender = st.selectbox('Select Gender:', label_encoder_gender.classes_, help="Select the gender of the customer.")
 age = st.slider('Select Age:', 18, 100, 40, help="Select the age of the customer.")
 balance = st.number_input('Enter Balance:', min_value=0, value=50000, step=1000, help="Enter the balance of the customer.")
@@ -37,9 +37,11 @@ credit_score = st.number_input('Enter Credit Score:', min_value=300, max_value=8
 estimated_salary = st.number_input('Enter Estimated Salary:', min_value=0, value=50000, step=1000, help="Enter the estimated salary of the customer.")
 tenure = st.slider('Select Tenure (Years):', 0, 10, 2, help="How long has the customer been with the company?")
 num_of_products = st.slider('Select Number of Products:', 1, 4, 2, help="Select how many products the customer has.")
-has_cr_card = st.selectbox('Has Credit Card:', [0, 1], help="Does the customer have a credit card? (0 = No, 1 = Yes)")
-is_active_member = st.selectbox('Is Active Member:', [0, 1], help="Is the customer an active member? (0 = No, 1 = Yes)")
+has_cr_card = st.selectbox('Has Credit Card:', ["No", 'Yes'], help="Does the customer have a credit card? (False = No, True = Yes)")
+is_active_member = st.selectbox('Is Active Member:', ["No", 'Yes'], help="Is the customer an active member? (False = No, True = Yes)")
 
+has_cr_card = 0 if has_cr_card == 'No' else 1
+is_active_member = 0 if is_active_member == 'No' else 1
 
 st.markdown("---")
 
