@@ -5,6 +5,8 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
 import pandas as pd
 import pickle
 
+st.set_page_config(page_title="Customer Churn Rate Prediction", page_icon=":bar_chart:", layout="wide")
+
 ### --------------- Loading Models and Preprocessors -----------------
 
 # Loading the trained model
